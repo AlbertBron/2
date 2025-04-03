@@ -66,6 +66,9 @@
             width: 220px;
             z-index: 1000;
             font-weight: bold;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         .menu a {
             display: block;
@@ -77,6 +80,11 @@
         }
         .menu a:hover {
             background-color: #f8bbd0;
+        }
+        .menu.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
         }
         .image-container {
             display: flex;
@@ -123,10 +131,43 @@
         <p>Somos una fundación dedicada a ayudar a mujeres en situación de vulnerabilidad, brindando apoyo y nuevas oportunidades.</p>
         <a href="historia.html" class="button">Ver Historia de la Fundación</a>
         <a href="trabajo.html" class="button">Ver Nuestro Trabajo</a>
-        <button class="button" onclick="toggleMenu();" aria-label="Abrir menú de programas">Programas</button>
+        <a href="#" class="button" onclick="toggleMenu(); return false;" aria-label="Abrir menú de programas">Programas</a>
         <div id="menu" class="menu">
             <a href="programa1.html">Programa de Capacitación</a>
-            <a href="programa2.html">Programa de Asesoría
+            <a href="programa2.html">Programa de Asesoría Legal</a>
+            <a href="programa3.html">Programa de Apoyo Psicológico</a>
+        </div>
+        <a href="destinatarios.html" class="button">Destinatarios y Personal de Apoyo</a>
+    </section>
+
+    <section>
+        <h2>Contacto</h2>
+        <p>Email: contacto@fundacionnuevaaurora.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="Logo Fundación Nueva Aurora">
+        <p>&copy; 2025 Fundación Nueva Aurora</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".button[onclick='toggleMenu(); return false;']");
+            if (menu.classList.contains("show") && !menu.contains(event.target) && event.target !== button) {
+                menu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>
 
 
 
