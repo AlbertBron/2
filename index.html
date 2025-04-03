@@ -11,12 +11,20 @@
             padding: 0;
             text-align: center;
             background-color: #fce4ec;
+            color: #333;
         }
         header {
             background-color: #e91e63;
             color: white;
             padding: 20px;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        header img {
+            width: 100px;
         }
         section {
             margin: 20px;
@@ -38,6 +46,7 @@
             cursor: pointer;
             text-align: center;
             border: 2px solid black;
+            transition: background 0.3s ease-in-out;
         }
         .button:hover {
             background-color: #d81b60;
@@ -54,6 +63,9 @@
             width: 220px;
             z-index: 1000;
             font-weight: bold;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         .menu a {
             display: block;
@@ -66,12 +78,29 @@
         .menu a:hover {
             background-color: #f8bbd0;
         }
+        .menu.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+        footer {
+            background-color: #e91e63;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        footer img {
+            width: 60px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo de Fundación Nueva Aurora" width="150">
+        <img src="logo.png" alt="Logo de Fundación Nueva Aurora">
         <h1>Fundación Nueva Aurora</h1>
     </header>
 
@@ -81,7 +110,7 @@
         <p>Somos una fundación ficticia dedicada a ayudar a mujeres en situación de vulnerabilidad, brindando apoyo y nuevas oportunidades.</p>
         <a href="historia.html" class="button">Ver Historia de la Fundación</a>
         <a href="trabajo.html" class="button">Ver Nuestro Trabajo</a>
-        <button class="button" onclick="toggleMenu()">Programas</button>
+        <button class="button" onclick="toggleMenu()" aria-label="Abrir menú de programas">Programas</button>
         <div id="menu" class="menu">
             <a href="programa1.html">Programa de Capacitación</a>
             <a href="programa2.html">Programa de Asesoría Legal</a>
@@ -96,16 +125,17 @@
     </section>
 
     <footer>
-        <img src="logo.png" alt="Logo Fundación Nueva Aurora" width="100">
+        <img src="logo.png" alt="Logo Fundación Nueva Aurora">
         <p>&copy; 2025 Fundación Nueva Aurora</p>
     </footer>
 
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            menu.classList.toggle("show");
         }
     </script>
 
 </body>
 </html>
+
