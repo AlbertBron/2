@@ -9,9 +9,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
             background-color: #fce4ec;
             color: #333;
+            text-align: center;
         }
         header {
             background-color: #e91e63;
@@ -19,12 +19,15 @@
             padding: 20px;
             font-size: 24px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
         }
         header img {
             width: 170px;
+        }
+        header h1 {
+            margin: 10px 0 0 0;
         }
         section {
             margin: 20px;
@@ -63,9 +66,6 @@
             width: 220px;
             z-index: 1000;
             font-weight: bold;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         .menu a {
             display: block;
@@ -78,19 +78,29 @@
         .menu a:hover {
             background-color: #f8bbd0;
         }
-        .menu.show {
-            display: block;
-            opacity: 1;
-            transform: scale(1);
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-container img {
+            width: 300px;
+            border-radius: 10px;
+        }
+        .image-container p {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #e91e63;
         }
         footer {
             background-color: #e91e63;
             color: white;
             padding: 15px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 10px;
         }
         footer img {
             width: 60px;
@@ -106,38 +116,17 @@
 
     <section>
         <h2>Sobre Nosotros</h2>
-        <img src="20171224_103023.jpg" alt="Nuestro equipo de trabajo" width="300">
+        <div class="image-container">
+            <img src="20171224_103023.jpg" alt="Nuestro equipo de trabajo">
+            <p>Nuestro equipo de trabajo</p>
+        </div>
         <p>Somos una fundación dedicada a ayudar a mujeres en situación de vulnerabilidad, brindando apoyo y nuevas oportunidades.</p>
         <a href="historia.html" class="button">Ver Historia de la Fundación</a>
         <a href="trabajo.html" class="button">Ver Nuestro Trabajo</a>
-        <a href="#" class="button" onclick="toggleMenu(); return false;" aria-label="Abrir menú de programas">Programas</a>
+        <button class="button" onclick="toggleMenu();" aria-label="Abrir menú de programas">Programas</button>
         <div id="menu" class="menu">
             <a href="programa1.html">Programa de Capacitación</a>
-            <a href="programa2.html">Programa de Asesoría Legal</a>
-            <a href="programa3.html">Programa de Apoyo Psicológico</a>
-        </div>
-        <a href="destinatarios.html" class="button">Destinatarios y Personal de Apoyo</a>
-    </section>
+            <a href="programa2.html">Programa de Asesoría
 
-    <section>
-        <h2>Contacto</h2>
-        <p>Email: contacto@fundacionnuevaaurora.com</p>
-        <p>Teléfono: 123-456-7890</p>
-    </section>
-
-    <footer>
-        <img src="logo.png" alt="Logo Fundación Nueva Aurora">
-        <p>&copy; 2025 Fundación Nueva Aurora</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-    </script>
-
-</body>
-</html>
 
 
