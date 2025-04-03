@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Nueva Aurora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #fce4ec;
@@ -17,17 +19,12 @@
             background-color: #e91e63;
             color: white;
             padding: 20px;
-            font-size: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         header img {
-            width: 190px;
-        }
-        header h1 {
-            margin: 10px 0 0 0;
+            width: 170px;
         }
         section {
             margin: 20px;
@@ -35,6 +32,11 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         .button {
             display: block;
@@ -70,17 +72,6 @@
             transform: scale(0.95);
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-        .menu a {
-            display: block;
-            padding: 15px;
-            color: #e91e63;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .menu a:hover {
-            background-color: #f8bbd0;
-        }
         .menu.show {
             display: block;
             opacity: 1;
@@ -94,6 +85,10 @@
         .image-container img {
             width: 300px;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.03);
         }
         .image-container p {
             margin-top: 10px;
@@ -108,7 +103,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         footer img {
             width: 60px;
@@ -116,7 +110,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <img src="logo.png" alt="Logo de Fundación Nueva Aurora">
         <h1>Fundación Nueva Aurora</h1>
@@ -142,8 +135,8 @@
 
     <section>
         <h2>Contacto</h2>
-        <p>Email: contacto@fundacionnuevaaurora.com</p>
-        <p>Teléfono: 123-456-7890</p>
+        <p><i class="fas fa-envelope"></i> contacto@fundacionnuevaaurora.com</p>
+        <p><i class="fas fa-phone"></i> 123-456-7890</p>
     </section>
 
     <footer>
@@ -165,9 +158,5 @@
             }
         });
     </script>
-
 </body>
 </html>
-
-
-
